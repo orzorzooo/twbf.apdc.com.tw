@@ -39,14 +39,19 @@
             <li>財團法人台南市文化基金會</li>
           </div>
         </div>
-        <div class="col col-md-auto">
-          <a href="https://www.facebook.com/tsbandsh">
-            <q-icon
-              name="font_facebook"
-              color="white"
-              size="3rem"
-              class="cursor-pointer"
-            />
+        <div class="col-12 col-md-4">
+          <a
+            class="mx-auto text-center"
+            href="https://www.facebook.com/tsbandsh"
+          >
+            <div>
+              <q-icon
+                name="font_facebook"
+                color="white"
+                size="3rem"
+                class="cursor-pointer mx-auto"
+              />
+            </div>
           </a>
         </div>
       </div>
