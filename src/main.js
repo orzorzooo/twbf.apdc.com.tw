@@ -14,6 +14,8 @@ import "./assets/main.css";
 
 import { useRouter, useRoute } from "vue-router";
 
+import { MotionPlugin } from "@vueuse/motion";
+
 const app = createApp(App);
 
 app.config.globalProperties.$route = useRoute();
@@ -21,6 +23,7 @@ app.config.globalProperties.$router = useRouter();
 
 app.use(createPinia());
 app.use(router);
+app.use(MotionPlugin);
 app.use(Quasar, {
   plugins: {}, // import Quasar plugins and add here
 });
