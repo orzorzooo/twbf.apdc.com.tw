@@ -14,21 +14,6 @@ const router = createRouter({
           name: "home",
           component: home,
         },
-        {
-          path: "lgs",
-          name: "lgs",
-          component: () => import("@/views/lgs/index.vue"),
-        },
-        {
-          path: "lgs/order",
-          name: "lgsOrder",
-          component: () => import("@/views/lgs/order.vue"),
-        },
-        {
-          path: "lgs/order/:size/:model",
-          name: "lgsOrderModel",
-          component: () => import("@/views/lgs/orderModel.vue"),
-        },
       ],
     },
     // {
