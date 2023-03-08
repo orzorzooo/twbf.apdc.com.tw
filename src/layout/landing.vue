@@ -1,10 +1,6 @@
 <template>
   <q-layout view="Hhh lpR fff">
-    <q-header class="bg-amber-500 text-white">
-      <div class="q-pa-sm md:p-3 font-bold drop-shadow-md text-xl">
-        臺南市管樂藝術季
-      </div>
-    </q-header>
+    <orznav></orznav>
 
     <q-page-container>
       <router-view />
@@ -59,3 +55,7 @@
     </q-footer>
   </q-layout>
 </template>
+
+<script setup>
+import orznav from "@/components/nav.vue";
+</script>

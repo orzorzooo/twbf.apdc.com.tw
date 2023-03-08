@@ -1,6 +1,7 @@
 <template>
   <div class="">
     <div
+      id="hero"
       class="bg-amber-500 p-5 h-screen md:h-auto flex justify-items-center content-center relative overflow-hidden md:pb-0"
     >
       <img
