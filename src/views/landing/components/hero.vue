@@ -23,6 +23,10 @@
               scale: 1,
               y: 0,
             }"
+            :tapped="{
+              scale: 1.2,
+              y: -25,
+            }"
           />
           <img
             :src="title02"

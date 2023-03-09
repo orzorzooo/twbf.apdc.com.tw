@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="Hhh lpR fff">
+  <q-layout view="HHH lpR fff">
     <orznav></orznav>
 
     <q-page-container>
