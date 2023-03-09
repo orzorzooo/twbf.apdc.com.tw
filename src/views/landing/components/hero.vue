@@ -2,31 +2,11 @@
   <div class="">
     <div
       id="hero"
-      class="bg-amber-500 p-5 h-screen md:h-auto flex justify-items-center content-center relative overflow-hidden md:pb-0"
+      class="bg-amber-500 p-5 h-screen md:h-screen md:h-auto flex justify-items-center content-center relative overflow-hidden md:pb-0"
     >
       <compass></compass>
-      <!-- <div
-        alt=""
-        class="absolute bg w-1/2 right-0"
-        v-motion
-        :initial="{
-          opacity: 0,
-          y: 600,
-        }"
-        :enter="{
-          opacity: 0.3,
-          transition: {
-            delay: 750,
-          },
-          y: 300,
-          x: 100,
-        }"
-      >
-        <img :src="compass" class="absolute inset-0" ref="compass" />
-        <img :src="compass_hand" ref="compass_hand" />
-      </div> -->
 
-      <div class="w-full md:w-3/5 mx-auto pb-5">
+      <div class="w-full md:w-3/5 mx-auto pb-5 landscape:w-1/2">
         <div class="text-center mx-auto w-full hero-bg py-5">
           <img
             :src="title01"
@@ -137,17 +117,7 @@ import title02 from "/src/assets/images/logo_anim/title02.svg";
 import title03 from "/src/assets/images/logo_anim/title03.svg";
 import title04 from "/src/assets/images/logo_anim/title04.svg";
 import title05 from "/src/assets/images/logo_anim/title05.svg";
-import logo_o_2 from "/src/assets/images/logo_anim/logo_o_2.svg";
 import compass from "./compass.vue";
-
-// const slides = ref([
-//   {
-//     title: "",
-//     content: "",
-//     // You can also provide a URL for the image.
-//     image: c1,
-//   },
-// ]);
 </script>
 <style>
 .bg {

@@ -1,39 +1,21 @@
 <template>
-  <!-- {{ bodyW }} -->
-  <!-- <div
-    v-motion
-    :initial="{
-      opacity: 0,
-      y: 600,
-    }"
-    :enter="{
-      opacity: 0.3,
-      transition: {
-        delay: 750,
-      },
-      y: 300,
-      x: 100,
-    }"
-  ></div> -->
   <div
     alt=""
-    class="absolute right-0"
-    id="compass"
+    class="absolute w-full md:w-1/2 right-0 bottom-0 landscape:w-1/2"
     v-motion
     :initial="{
       opacity: 0,
-      y: 600,
+      y: 300,
     }"
     :enter="{
       opacity: 0.7,
+      y: 0,
       transition: {
         delay: 750,
       },
-      y: 300,
-      x: 100,
     }"
   >
-    <img :src="compass_body" class="absolute inset-0" ref="cbody" id="cbody" />
+    <img :src="compass_body" class="absolute" />
     <img
       v-motion
       :initial="{
@@ -49,7 +31,6 @@
       }"
       :src="compass_hand"
       class="relative"
-      ref="chand"
       id="chand"
     />
   </div>
@@ -57,36 +38,23 @@
 
 <script setup>
 import { ref, onMounted, nextTick, onUpdated, watch } from "vue";
-import { useElementSize, useDeviceMotion } from "@vueuse/core";
+import {
+  useElementSize,
+  useDeviceMotion,
+  useTimeout,
+  promiseTimeout,
+  useDeviceOrientation,
+} from "@vueuse/core";
 import compass_body from "/src/assets/images/compass.svg";
 import compass_hand from "/src/assets/images/compass_hand.svg";
-const cbody = ref(null);
-// const hand = ref(null);
-// const { width: bodyW, height: bodyH } = useElementSize(cbody);
-const { width: bodyW, height: bodyH } = useElementSize(cbody);
-const { acceleration, accelerationIncludingGravity, rotationRate, interval } = useDeviceMotion();
 
-watch(bodyW, (v, oldv) => {
-  const cbody = document.querySelector("#cbody");
-  const chand = document.querySelector("#chand");
-
-  chand.style.height = `${v}px`;
-  const chand_offset = chand.offsetWidth / 2;
-  console.log(chand_offset);
-  chand.style.left = `${v * 0.5 - chand_offset}px`;
-});
-
-onMounted(() => {
-  // console.log("1", cbody.value);
-  // console.log("2", bodyW.value);
-});
+const { acceleration, accelerationIncludingGravity, rotationRate, interval } =
+  useDeviceMotion();
+const { isAbsolute, alpha, beta, gamma } = useDeviceOrientation();
 </script>
 <style scoped>
-#compass {
-  width: 50%;
+#chand {
+  width: 22.5%;
+  margin: 0 auto;
 }
-
-/* #hand {
-  position: relative;
-} */
 </style>
