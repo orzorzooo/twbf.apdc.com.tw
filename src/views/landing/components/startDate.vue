@@ -108,7 +108,7 @@ import startTitle from "/src/assets/images/start_title.svg";
 import bubbleTea from "/src/assets/images/bubbleTea.svg";
 </script>
 
-<style scope>
+<style scoped>
 .text-stroke {
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: rgb(255, 255, 255);
