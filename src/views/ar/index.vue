@@ -90,7 +90,7 @@
             v-if="item.gltf_file_url"
             rotation="0 0 0 "
             position="0 0 0.1"
-            scale="1 1 1"
+            :scale="item.scale ? item.scale : '1 1 1'"
             :src="'#asset_item_id_' + index"
           ></a-gltf-model>
         </a-entity>
