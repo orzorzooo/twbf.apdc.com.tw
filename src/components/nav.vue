@@ -1,8 +1,8 @@
 <template>
   <q-header
     ref="el"
-    v-if="y > height"
-    class="bg-amber-500 text-white"
+    class="bg-amber-500 text-white nav"
+    v-if="show"
     v-motion
     :initial="{
       opacity: 0,
@@ -17,6 +17,7 @@
     <div class="mx-auto">
       <div class="absolute left-10">
         <img
+          @click="$router.push({ name: 'home' })"
           v-motion
           :initial="{
             opacity: 0,
@@ -39,9 +40,25 @@
   </q-header>
 </template>
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { useWindowScroll, useElementSize } from "@vueuse/core";
+import { useRouter, useRoute } from "vue-router";
 import logo from "@/assets/images/logo_rounded.svg";
 const { x, y } = useWindowScroll();
 const height = window.screen.height;
+const route = useRoute();
+
+const show = computed(() => {
+  if (route.meta.navHideOnHero) {
+    if (y.value <= height) return false;
+    return true;
+  } else {
+    return true;
+  }
+});
 </script>
+<style scoped>
+.nav {
+  z-index: 100000;
+}
+</style>
