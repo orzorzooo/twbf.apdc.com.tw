@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import home from "@/views/landing/index.vue";
+import ar from "@/views/ar/index.vue";
 import layoutLanding from "@/layout/landing.vue";
 
 const router = createRouter({
@@ -13,9 +14,16 @@ const router = createRouter({
           path: "",
           name: "home",
           component: home,
+          meta: { navHideOnHero: true },
+        },
+        {
+          path: "ar",
+          name: "ar",
+          component: ar,
         },
       ],
     },
+
     // {
     //   path: '/about',
     //   name: 'about',
@@ -25,6 +33,10 @@ const router = createRouter({
     //   component: () => import('../views/AboutView.vue')
     // }
   ],
+  scrollBehavior(to, from, savedPosition) {
+    // 始终滚动到顶部
+    return { top: 0 };
+  },
 });
 
 export default router;
