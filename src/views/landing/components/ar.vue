@@ -14,9 +14,7 @@
         opacity: 1,
         scale: 1,
         y: 0,
-        transition: {
-          delay: 400,
-        },
+        transition: {},
       }"
     >
       XR互動尋寶體驗
@@ -40,16 +38,15 @@
       :hovered="{
         scale: 1.1,
       }"
+      @click="$router.push({ name: 'ar' })"
     >
       <img :src="phone" alt="" class="absolute right-0 bottom-0 w-24" />
       點我測試!
     </div>
-    <mindARViewer></mindARViewer>
   </div>
 </template>
 <script setup>
 import phone from "/src/assets/images/phone.svg";
-import mindARViewer from "./mindARViewer.vue";
 </script>
 <style scoped>
 .text-stroke {
